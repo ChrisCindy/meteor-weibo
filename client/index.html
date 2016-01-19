@@ -1,0 +1,26 @@
+<template name="index">
+	{{#if currentUser}}
+		<form class="well form-inline center" style="text-align:center;">
+			<div class="form-group">
+				<input type="text" class="col-md-8 form-control" id="post">
+			</div>
+			<button id="submit" class="btn btn-success">
+				<i class="icon-comment icon-white">发表</i>
+			</button></form>
+	{{/if}}
+	<!-- <div class="jumbotron">
+		<h1>欢迎来到weibo</h1>
+		<p>weibo是一个基于Meteor的微博系统。</p>
+		<p>
+			<a href="/login" class="btn btn-primary btn-large">登录</a>
+			<a href="/reg" class="btn btn-large">立即注册</a>
+		</p>
+	</div> -->
+	{{#each posts}}
+		<h2>{{user.username}} 说</h2>
+		<p class="muted">{{time}}</p>
+		<p>{{#markdown}}{{post}}{{/markdown}}</p>
+	{{/each}}
+
+
+</template>
